@@ -30,6 +30,7 @@ def play_game(level):
                 stockfish.make_moves_from_current_position([user_input])
                 if board.is_game_over():
                     print("Game over:", board.result())
+                    stockfish.set_fen_position(chess.STARTING_FEN)
                     break
 
                 # Stockfish move
@@ -39,6 +40,7 @@ def play_game(level):
                 board.push(chess.Move.from_uci(best_move))                
                 if board.is_game_over():
                     print("Game over:", board.result())
+                    stockfish.set_fen_position(chess.STARTING_FEN)
                     break
             else:
                 print("Invalid move. Please enter a valid move.")
