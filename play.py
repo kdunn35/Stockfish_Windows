@@ -23,7 +23,7 @@ def play_game(level):
 
         try:
             move = chess.Move.from_uci(user_input)
-            # check valid input
+            # check for valid input
             if move in board.legal_moves:
                 # your move
                 board.push(move)
